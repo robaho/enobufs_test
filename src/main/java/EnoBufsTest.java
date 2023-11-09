@@ -14,8 +14,8 @@ import java.util.concurrent.locks.LockSupport;
 import javax.net.ServerSocketFactory;
 
 public class EnoBufsTest {
-    // private static final Executor executor = Executors.newVirtualThreadPerTaskExecutor();
-    private static final Executor executor = Executors.newCachedThreadPool();
+    private static final Executor executor = Executors.newVirtualThreadPerTaskExecutor();
+    // private static final Executor executor = Executors.newCachedThreadPool();
 
     private static class Listener implements Runnable {
         @Override
@@ -52,7 +52,7 @@ public class EnoBufsTest {
                     while (true) { 
                         String line = r.readLine();
                         if(line==null) {
-                            System.out.println("end of stream");
+                            // System.out.println("end of stream");
                             return;
                         }
                         // System.out.println("line = "+line);
